@@ -1,0 +1,16 @@
+site_name: Notas Musicais
+repo_url: https://github.com/kylefelipe/notas-musicais
+repo_name: kylefelipe/notas-musicais
+edit_uri: tree/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo_notas_musicais.png
+  favicon: assets/logo_notas_musicais.png
+
+markdown_extensions:
+  - attr_list
+
+extra_css:
+  - stylesheets/extra.css
