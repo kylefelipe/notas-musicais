@@ -11,6 +11,8 @@ theme:
 
 markdown_extensions:
     - attr_list
+    - admonition
+    - pymdownx.tasklist
 
 extra_css:
     - stylesheets/extra.css
@@ -18,8 +20,15 @@ extra_css:
 watch:
     - notas_musicais
 
-plugins: 
+plugins:
+- macros
 - mkdocstrings:
     handlers:
         python:
             paths: [notas_musicais]
+
+extra:
+    commands:
+        run: poetry run notas-musicais
+        install_by_pip: pip install notas-musicais
+        install_by_pipx: pipx install notas-musicais
