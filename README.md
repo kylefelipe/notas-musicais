@@ -3,7 +3,7 @@
 # Notas Musicais
 
 [![Documentation Status](https://readthedocs.org/projects/notas-musicais-kylefelipe/badge/?version=latest)](https://notas-musicais-kylefelipe.readthedocs.io/en/latest/?badge=latest) 
-![CI](https://github.com/kylefelipe/notas-musicais/actions/workflows/pipelide.yaml/badge.svg) 
+![CI](https://github.com/kylefelipe/notas-musicais/actions/workflows/pipeline.yaml/badge.svg) 
 [![codecov](https://codecov.io/github/kylefelipe/notas-musicais/branch/main/graph/badge.svg?token=8TS8VMT18N)](https://codecov.io/github/kylefelipe/notas-musicais)
 
 Notas musicais é um CLI para ajudar na formação de escalas, acordes e campos hamônicos.
