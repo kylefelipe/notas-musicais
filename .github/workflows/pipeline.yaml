@@ -24,7 +24,7 @@ jobs:
         run: poetry install --without doc
 
       - name: Rodar os testes
-        run: poetry run pytest
+        run: poetry run task test --cov-report=xml
       
       - name: Subir cobertura para codecov
         uses: codecov/codecov-action@v3
