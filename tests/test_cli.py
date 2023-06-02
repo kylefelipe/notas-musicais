@@ -18,7 +18,7 @@ def test_escala_cli_deve_conter_as_notas_na_resposta(nota):
 
 
 @mark.parametrize('nota', ['F', 'G', 'A', 'A#', 'C', 'D', 'E'])
-def test_escala_cli_deve_conter_as_notas_na_resposta_fa(nota):
+def test_escala_cli_deve_conter_as_notas_na_resposta(nota):
     result = runner.invoke(app, ['escala', 'F'])
     assert nota in result.stdout
 

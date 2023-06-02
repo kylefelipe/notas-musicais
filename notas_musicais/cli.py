@@ -16,10 +16,14 @@ def escala(
     tonalidade: str = Argument('maior', help='Tonalidade da escala'),
 ):
     table = Table()
+
     notas, graus = _escala(tonica, tonalidade).values()
+
     for grau in graus:
         table.add_column(grau)
+
     table.add_row(*notas)
+
     console.print(table)
 
 
@@ -27,11 +31,16 @@ def escala(
 def acorde(
     cifra: str = Argument('C', help='Cifra do acorde'),
 ):
+
     table = Table()
+
     notas, graus = _acorde(cifra).values()
+
     for grau in graus:
         table.add_column(grau)
+
     table.add_row(*notas)
+
     console.print(table)
 
 
@@ -40,9 +49,14 @@ def campo_harmonico(
     tonica: str = Argument('C', help='Tonica do campo harmonico'),
     tonalidade: str = Argument('maior', help='Tonalidade do campo harmonico'),
 ):
+
     table = Table()
+
     acordes, graus = _campo_harmonico(tonica, tonalidade).values()
+
     for grau in graus:
         table.add_column(grau)
+
     table.add_row(*acordes)
+
     console.print(table)
