@@ -2,6 +2,17 @@ from pytest import mark
 
 from notas_musicais.acordes import acorde
 
+"""
+Entrada
+acorde Cm
+
+Esperado:
+I - III - V
+C    E    G
+
+{'notas': ['C', 'E', 'G'], 'graus': ['I', 'III', 'V']}
+"""
+
 
 @mark.parametrize(
     'nota, esperado',

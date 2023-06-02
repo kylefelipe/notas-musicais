@@ -36,7 +36,7 @@ def semiton(nota, intervalo) -> list[str]:
         >>> semiton('C', intervalo=-1)
         'B'
     """
-    pos = NOTAS.index(nota)
+    pos = NOTAS.index(nota.upper())
     return NOTAS[(pos + intervalo) % len(NOTAS)]
 
 
@@ -77,26 +77,35 @@ def acorde(cifra: str) -> dict[str, list[str]]:
     Examples:
         >>> acorde('C')
         {'notas': ['C', 'E', 'G'], 'graus': ['I', 'III', 'V']}
+
         >>> acorde('Cm')
         {'notas': ['C', 'D#', 'G'], 'graus': ['I', 'III-', 'V']}
+
         >>> acorde('C°')
         {'notas': ['C', 'D#', 'F#'], 'graus': ['I', 'III-', 'V-']}
+
         >>> acorde('C+')
         {'notas': ['C', 'E', 'G#'], 'graus': ['I', 'III', 'V+']}
+
+        >>> acorde('Cm+')
+        {'notas': ['C', 'D#', 'G#'], 'graus': ['I', 'III-', 'V+']}
     """
     graus = (0, 2, 4)
     if 'm' in cifra:
         notas, graus = _menor(cifra)
+
     elif '°' in cifra:
         nota, _ = cifra.split('°')
         tonica, terca, quinta = triade(nota, 'menor')
         notas = [tonica, terca, semiton(quinta, intervalo=-1)]
         graus = ['I', 'III-', 'V-']
+
     elif '+' in cifra:
         nota, _ = cifra.split('+')
         tonica, terca, quinta = triade(nota, 'maior')
         notas = [tonica, terca, semiton(quinta, intervalo=+1)]
         graus = ['I', 'III', 'V+']
+
     else:
         notas = triade(cifra, 'maior')
         graus = ['I', 'III', 'V']
