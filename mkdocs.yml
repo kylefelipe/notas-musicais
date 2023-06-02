@@ -4,31 +4,40 @@ repo_name: kylefelipe/notas-musicais
 edit_uri: tree/main/docs/
 
 theme:
-    name: material
-    language: pt-BR
-    logo: assets/logo_notas_musicais.png
-    favicon: assets/logo_notas_musicais.png
+  name: material
+  language: pt-BR
+  logo: assets/logo_notas_musicais.png
+  favicon: assets/logo_notas_musicais.png
 
 markdown_extensions:
-    - attr_list
-    - admonition
-    - pymdownx.tasklist
+  - attr_list
+  - admonition
+  - pymdownx.tasklist
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
 
 extra_css:
-    - stylesheets/extra.css
+  - stylesheets/extra.css
 
 watch:
-    - notas_musicais
+  - notas_musicais
 
 plugins:
 - macros
 - mkdocstrings:
     handlers:
-        python:
-            paths: [notas_musicais]
+      python:
+        paths: [notas_musicais]
 
 extra:
-    commands:
-        run: notas-musicais
-        install_by_pip: pip install notas-musicais
-        install_by_pipx: pipx install notas-musicais
+  commands:
+    run: notas-musicais
+    install_by_pip: pip install notas-musicais
+    install_by_pipx: pipx install notas-musicais
