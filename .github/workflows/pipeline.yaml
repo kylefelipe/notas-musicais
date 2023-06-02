@@ -14,6 +14,9 @@ jobs:
         with:
           python-version: '3.10.6'
 
+      - name: Atualizando Pip
+        run: pip install --upgrade pip
+
       - name: Instalar poetry
         run: pip install poetry
 
