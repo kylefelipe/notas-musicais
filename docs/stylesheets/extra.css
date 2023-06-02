@@ -30,3 +30,7 @@
 .text-title {
     text-transform: uppercase;
 }
+
+div.mermaid {
+    text-align: center;
+}

@@ -67,17 +67,12 @@ Resultando em:
 └────┴────┴─────┴────┴────┴────┴─────┘
 ```
 
-### Acordes
+## Acordes
 
 Uso básico:
 
 ```bash
-{{ commands.run }} acorde C
-```
-
-Irá retornar:
-
-```bash
+{{ commands.run }} acorde
 ┏━━━┳━━━━━┳━━━┓
 ┃ I ┃ III ┃ V ┃
 ┡━━━╇━━━━━╇━━━┩
@@ -85,13 +80,10 @@ Irá retornar:
 └───┴─────┴───┘
 ```
 
+### Variações na cifra
+
 ```bash
 {{ commands.run }} acorde C+
-```
-
-Irá retornar:
-
-```bash
 ┏━━━┳━━━━━┳━━━━┓
 ┃ I ┃ III ┃ V+ ┃
 ┡━━━╇━━━━━╇━━━━┩
@@ -120,22 +112,12 @@ Até o momento você pode usar acordes maiores, menores (`m`), aumentados (`+`) 
 Você pode chamar os campos harmônicos via o subcomando `campo-harmonico`. Por exemplo:
 
 ```bash
-poetry run notas-musicas campo-hamonico
-```
-
-Por padrão os parâmetros utilizado são a tônica de `C` e o campo hamrônico `maior`.
-
-### Alterações nos campos harmõnicos
-
-Você pode alterar os parâmetros da tônica e da tonalidade.
-
-```bash
-{{ commands.run }} campo-hamonico [TONICA] [TONALIDADE]
+{{ commands.run }} campo-hamonico
 ```
 
 ### Alteração na tônica do campo
 
-Um exemplo como campo harmônico de `E`:
+Um exemplo com o campo harmônico de `E`:
 
 ```bash
 {{ commands.run }} E
@@ -167,11 +149,7 @@ Para descobir outras opções, você pode usar a flag `--help`:
 
 ```bash
 {{ commands.run }} --help
-```
 
-Que irá exibir:
-
-```bash
  Usage: notas-musicais [OPTIONS] [TONICA] [TONALIDADE]                                                 
                                                                                                 
 ╭─ Commands ───────────────────────────────────────────────────╮
